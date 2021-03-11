@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap" rel="stylesheet">
+    <title>Jacob Burns Resume</title>
+    <style>
+        html {
+            margin: 0;
+            padding: 0;
+            max-width: 100%;
+            font-family: 'Noto Sans JP', sans-serif;
+            text-align: center;
+            scrollbar-width: none;
+        }
+        @media (max-width: 370px) {
+
+        }
+        @media (max-width: 600px) {
+            .my-name {
+                font-size: 20px;
+            }
+            .break-title {
+                font-size: .7em;
+            }
+            .nav-top > ul {
+                font-size: .65em;
+            }
+        }
+        .main {
+            background: linear-gradient(to bottom, rgb(145, 184, 194), rgb(62, 85, 116) );
+            box-shadow: 0px 1px 10px;
+            margin: 0;
+            border-radius: 10px;
+        }
+        li {
+            list-style: none;
+            margin-right: 30px;
+        }
+        .nav-top {
+            position: fixed;
+            top: 0;
+            width: 99%;
+            z-index: 3;
+        }
+        .nav-top > ul {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background: #301728FF;
+        }
+        .nav-top > ul > li {
+            float: left;
+        }
+        .nav-top > ul > li > a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px;
+            text-decoration: none;
+        }
+        .nav-top > ul > li > a:hover {
+            background-color: #111;
+        }
+
+        .header {
+            background: rgb(214, 191, 178);
+            border-bottom: solid 2px rgba(0, 0, 0, .8);
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+        .my-name {
+            position: relative;
+            font-size: 1.5em;
+            margin: 10px 10px 10px 10px;
+            top: 30px;
+            font-family: 'Fredoka One', cursive;
+        }
+        .nav{
+            display: flex;         
+            justify-content: center;
+            gap: 5%;
+            padding: 10px 0px 15px 0px;
+        }
+        #link1, #link2, #link3 {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+        
+        .middle {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-areas:
+             ". objective objective ."
+             "mid-left mid-left mid-left mid-left"
+             "footer footer footer footer"
+             ;
+        }
+        .objective{
+            position: relative;
+            grid-area: objective;
+            margin: 10px 10px 10px 10px;
+            border-radius: 10px;
+            
+        }
+        .objective > h1 {
+            z-index: 2;
+            position: relative;
+            padding: 10px;
+            margin: 0px 80px 0px 80px;
+            font-size: 3em;
+            box-shadow: 0px 1px 10px black;
+            border: solid black 4px;
+            background: linear-gradient(to right, rgb(48, 23, 40), rgb(214, 191, 178), rgb(48, 23, 40));
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        .line {
+            z-index: 1;
+            position: relative;
+            top: 63px;
+            border: solid rgb(37, 47, 61) 8px;
+            
+        }
+
+        #statement {
+            font-size: 1.4em;
+            font-weight: 700;
+        }
+
+        .mid-left {
+            grid-area: mid-left;
+            border-radius: 10px;
+            margin: 10px;
+        }
+        .break-title {
+            background: #301728FF;
+            border-radius: 14px;
+            border: solid rgb(253, 221, 179) 3px;
+            margin: 0px 30px 0px 30px;
+            box-shadow: 0px 2px 10px darkslategray;
+            color: white;
+            font-family: 'Bebas Neue', cursive;
+            font-size: 1.2em;
+            line-height: 40px;
+            letter-spacing: 10px;
+        }
+        #university-name{
+            font-size: 1.5em;
+            color: maroon;
+            text-shadow: -1px 0px 5px white;
+        }
+        #bachelor {
+            opacity: .8;
+        }
+        .education {
+            border-radius: 10px;
+            margin: 10px;
+        }
+        .university{
+            display: flex;
+            flex-flow: wrap;
+            align-items: flex-end;
+            justify-content: center;
+            gap: 7px;
+        }
+
+        .degree {
+            display: flex;
+            flex-flow: column;
+        }
+
+        .job {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            font-size: 1.3em;
+        }
+        .job > div {
+            justify-content: space-between;
+            text-align: center;
+            border-right: 3px solid #000;
+            margin-top: 10px;
+            padding-right: 20px;
+        }
+        .job > div:last-child {
+            border: none;
+            color: rgb(187, 180, 116);
+        }
+        .date {
+            opacity: .8;
+            margin-bottom: -10px;
+        }
+        .bullets {
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+            gap: 10px;
+        }
+        .bullets > li {
+            text-decoration: overline;
+            font-weight: 500;
+        }
+        .bullets > li:first-child {
+            text-decoration: none;
+        }
+        .footer {
+            grid-area: footer;
+        }
+        .skills-div {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+        
+
+        .bounce:hover {
+        animation: animation 1000ms linear both;
+        }
+
+        /* Generated with Bounce.js. Edit at http://bouncejs.com#%7Bs%3A%5B%7BT%3A%22r%22%2Ce%3A%22b%22%2Cd%3A1000%2CD%3A0%2Cf%3A0%2Ct%3A90%2Cs%3A3%2Cb%3A4%7D%2C%7BT%3A%22r%22%2Ce%3A%22b%22%2Cd%3A1000%2CD%3A0%2Cf%3A0%2Ct%3A90%2Cs%3A3%2Cb%3A4%7D%2C%7BT%3A%22r%22%2Ce%3A%22b%22%2Cd%3A1000%2CD%3A0%2Cf%3A0%2Ct%3A90%2Cs%3A3%2Cb%3A4%7D%2C%7BT%3A%22r%22%2Ce%3A%22b%22%2Cd%3A1000%2CD%3A0%2Cf%3A0%2Ct%3A90%2Cs%3A3%2Cb%3A4%7D%5D%7D */
+
+        @keyframes animation { 
+        0% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+        4.3% { transform: matrix3d(-0.996, -0.09, 0, 0, 0.09, -0.996, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+        8.61% { transform: matrix3d(0.723, -0.691, 0, 0, 0.691, 0.723, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+        12.91% { transform: matrix3d(0.947, 0.323, 0, 0, -0.323, 0.947, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+        17.22% { transform: matrix3d(0.833, 0.553, 0, 0, -0.553, 0.833, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+        28.33% { transform: matrix3d(0.992, 0.129, 0, 0, -0.129, 0.992, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+        39.44% { transform: matrix3d(0.999, -0.039, 0, 0, 0.039, 0.999, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+        61.66% { transform: matrix3d(1, 0.003, 0, 0, -0.003, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+        83.98% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+        100% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); } 
+        }
+
+
+
+
+        
+    </style>
+</head>
+
+<div class="main" id='container'> 
+    <!--Top Row-->
+    <a name="top"></a>
+    <div class="nav-top">
+        <ul>
+            <li><a href="#top">Top</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#activities">Activities</a></li>
+            <li><a href="#skills">Skills</a></li>
+        </ul>
+    </div>
+    <div class="header">
+        <div class="my-name">
+            <h1>Jacob Burns</h1>
+        </div>
+        <div class="nav">
+            <div id="link1" class="animated bounce"><a href="mailto:jacdburns@gmail.com"><img alt="email icon" width="50" height="50" src="https://th.bing.com/th/id/Rc0b96680842dcf45e7f1edf508047521?rik=sA0pf6OGC0HbNQ&riu=http%3a%2f%2fcdn.onlinewebfonts.com%2fsvg%2fimg_262951.png&ehk=a%2boMOFMv4h70H96iLNWQNGIvhR3g8Lz6xX7EpCWwwMw%3d&risl=&pid=ImgRaw"></a></div>
+            <div id="link2" class="animated bounce"><a href="https://www.linkedin.com/in/jacobdburns/" target="_blank"><img alt="linkedin icon" width="50" height="50" src="https://cdn.onlinewebfonts.com/svg/img_80278.png"></a></div>
+            <div id="link3" class="animated bounce"><a href="https://github.com/Jakerious" target="_blank"><img alt="github icon" width="50px" height="50px" src="https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-512.png"></a></div>
+        </div>
+    </div>
+    <!--Body-->
+    <div class="middle">
+        
+        <div class="objective">
+            <hr class="line">
+            <h1>Objective</h1>
+            <p id="statement">Seeking an internship in web design. My strong desire to learn more every single day
+                and my passion for solving tough problems makes me a competitive candidate for this
+                job.
+            </p>
+        </div>
+        <div class="mid-left">
+            <div class="education">
+                <div class="break-title">
+                    <h1>Education<a name="education"></a></h1>
+                </div>
+                <div class="maj-min">
+                    <div class="university">
+                        <div id="university-name">
+                            <h2>Texas A&M University</h2>
+                        </div>
+                        <div id="bachelor">
+                            <h2>Bachelor of Arts - Summer 2021</h2>
+                        </div>
+                    </div>
+                    <div class="degree">
+                        <div>
+                            <h2>International Studies - Commerce Track </h2>
+                        </div>
+                        <div>
+                            <h2>French Minor</h2>
+                        </div>
+                        <div id="gpa">
+                            <h2>GPA 3.6</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="experience">
+                <div class="break-title">
+                    <h1><a name="experience"></a>Experience</h1>
+                </div>
+                <div class="job">
+                    <div>
+                        <h2>Skechers USA Inc.</h2>
+                    </div>
+                    <div>
+                        <h2>College Station, Texas</h2>
+                    </div>
+                </div>
+                    <div class="date">
+                        <h2>August 2019 - January 2020</h2>
+                    </div>
+                    
+                <div class="position">
+                    <h3>Sales Associate</h3>
+                </div>
+                <div>
+                    <ul class="bullets">
+                        <li>Carried out duties surrounding incoming merchandise shipments, readying the store and stocking shelves.
+                        </li>
+                        <li>Facilitated customer service from the minute a customer walked into the store to until they walked out.
+                        </li>
+                        <li>Trained new employees on standards for displays, using the register, and aspects of customer service.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="activites">
+                <div class="break-title">
+                    <h1>Activities<a name="activities"></a></h1>
+                </div>
+                    <div class="activity-one">
+                        <div class="job">
+                            <div>
+                                <h2>Texas A&M Singing Cadets</h2>
+                            </div>
+                            <div>
+                            <h2>Texas A&M University</h2>
+                            </div>
+                        </div>
+                        <div class="date">
+                            <h2>August 2018 - Present</h2>
+                        </div>
+                    </div>
+                    <div class="position">
+                        <h3>High School Recruitment Chair, Section Leader</h3>
+                    </div>
+                    <div>
+                        <ul class="bullets">
+                            <li>Enhanced the public relations of Texas A&M University.
+                            </li>
+                            <li>Sang for audiences in countries abroad as well as performing across the country on national tours and for U.S. dignitaries, including former heads of state.
+                            </li>
+                            <li>Auditioned and secured the tenor spot in "The Quad" and "The Aggienizors" barbershop quartets. 
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="activity-two">
+                        <div class="job">
+                            <div>
+                                <h2>Corps of Cadets</h2>
+                            </div>
+                            <div>
+                                <h2>Texas A&M University</h2>
+                            </div>
+                        </div>
+                        <div class="date">
+                            <h2>August 2018 - December 2019</h2>
+                        </div>
+                    </div>
+                    <div class="position">
+                        <h3>Scholastics Corporal</h3>
+                    </div>
+                    <div>
+                        <ul class="bullets">
+                            <li>Developed a system to monitor and improve the academic development of freshmen cadets.
+                            </li>
+                            <li>Mentored freshmen cadets, ensuring they have the tools necessary to achieve academic success. 
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="activity-three">
+                        <div class="job">
+                            <div>
+                                <h2>Boy Scouts of America</h2>
+                            </div>
+                            <div>
+                                <h2>Conroe, Texas</h2>
+                            </div>
+                        </div>
+                        <div class="date">
+                            <h2>January 2012 - August 2018</h2>
+                        </div>
+                        <div class="position">
+                            <h3>Eagle Scout</h3>
+                        </div>
+                        <div>
+                            <ul class="bullets">
+                                <li>Along with a group of young men who would become dearest friends, I learned problem-solving 
+                                    character skills that would last me a lifetime.
+                                </li>
+                                <li>Led younger scouts on a path to become independent and motivated young men of character. 
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="activity-four">
+                        <div class="job">
+                            <div>
+                                <h2>TAMU Fencing Club</h2>
+                            </div>
+                            <div>
+                                <h2>Texas A&M University</h2>
+                            </div>
+                        </div>
+                        <div class="date">
+                            <h2>August 2019 - Present</h2>
+                        </div>
+                        <div class="position">
+                            <h3>Member</h3>
+                        </div>
+                        <div>
+                            <ul class="bullets">
+                                <li>Competed across Texas representing Texas A&M sports clubs. 
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="activity-five">
+                        <div class="job">
+                            <div>
+                                <h2>Rotary International</h2>
+                            </div>
+                            <div>
+                            <h2>Avranches, France</h2>
+                            </div>
+                        </div>
+                        <div class="date">
+                            <h2>September 2015 - Present</h2>
+                        </div>
+                        <div class="position">
+                            <h3>Former Exchange Student, Youth Exchange Counselor</h3>
+                        </div>
+                        <div>
+                            <ul class="bullets">
+                                <li>Adapted to student life in France, and learned French up to an upper intermediate level. 
+                                </li>
+                                <li>Conducted interviews for dozens of teens looking to study abroad.
+                                </li>
+                                <li>Coordinated with Rotarians on deciding, planning, and carrying out orientation methods.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="activity-six">
+                        <div class="job">
+                            <div>
+                                <h2>Aggie Investment Club</h2>
+                            </div>
+                            <div>
+                                <h2>Texas A&M University</h2>
+                            </div>
+                        </div>
+                        <div class="date">
+                            <h2>January 2020 - Present</h2>
+                        </div>
+                        <div class="position">
+                            <h3>Member</h3>
+                        </div>
+                        <div>
+                            <ul class="bullets">
+                                <li>Joined this club to learn more about corporate finance and banking from business leaders and speakers. 
+                                </li>
+                                <li>Participated in various student-run workshops designed to develop and hone analytical skills.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+            </div>
+            <div class="service">
+                <div class="break-title">
+                    <h1>Service</h1>
+                </div>
+                    <div class="job">
+                        <div>
+                            <h2>Rotary Club of Lake Conroe</h2>
+                        </div>
+                        <div>
+                            <h2>Conroe, Texas</h2>
+                        </div>
+                    </div>
+                    <div class="date">
+                        <h2>August 2015 - Present</h2>
+                    </div>
+                    <div class="position">
+                        <h3>ROTEX - Former Exchange Student</h3>
+                    </div>
+                    <div>
+                        <ul class="bullets">
+                            <li>Served as Youth Exchange counselor, acting as a liaison between exchange students and club officials.
+                            </li>
+                            <li>Participate in service projects and fundraisers for the community.
+                            </li>
+                        </ul>
+                    </div>
+            </div>
+        </div>
+    <!--Footer-->
+        <div class="footer">
+            <div class="break-title">
+                <h1>Skills<a name="skills"></a></h1>
+            </div>
+            <br>
+            <div class="skills-div">
+                <div class="skills1">
+                    <div class="break-title">
+                        <h1>Soft Skills</h1>
+                    </div>
+                    <div class="skills1-list">
+                        <ul>
+                            <li>Excellent communication skills
+                            </li>
+                            <li>Quick learner
+                            </li>
+                            <li>Problem solver
+                            </li>
+                            <li>Team player
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="skills2">
+                    <div class="break-title">
+                        <h1>Hard Skills</h1>
+                    </div>
+                    <div class="skills2-list">
+                        <ul>
+                            <li>Advanced Microsoft Office knowledge</li>
+                            <li>Microsoft Excel Expert Certification</li>
+                            <li>FINRA SIE Exam</li>
+                            <li>DELF Certified French Fluent</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="skills3">
+                    <div class="break-title">
+                        <h1>Developing Skills</h1>
+                    </div>
+                    <div class="skills3-list">
+                        <ul>
+                            <li>Full-Stack web development</li>
+                            <li>Familiarity with APIs</li>
+                            <li>Familiarity with Python</li>
+                            <li>Learning more about design trends</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </div>
+</div>
+<script>
+/*Still learning more about how to use JS to make my websites even better. With your help, I can grow
+/*substantially in this regard. Keep an eye on my github for new commits as I progress. Thank you. */
+</script>
+</html>
